@@ -3,7 +3,7 @@ $(document).ready(function(){
     election_id = getQueryUrl()["election_id"];
     console.log(election_id);
 
-    var socket = io.connect('http://' + document.domain + ':' + 5001 + '/stream');
+    var socket = io.connect('http://' + document.domain + ':' + 5000 + '/stream');
     // connect first
     socket.on('connect', function(msg) {
         console.log(msg);
