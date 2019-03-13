@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Francois+One|Play');
+
+html,
+body,
+section {
+    height: 100%;
+}
+
+body {
+    color: #fff;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.xop-container {
+    display: flex;
+}
+
+div {
+    flex-direction: column;
+    justify-content: center;
+}
+
+p {
+    font-family: 'Play', sans-serif;
+}
+
+.xop-left {
+    background-color: #2980b9;
+    flex: 1;
+    padding: 1rem;
+    transition: all .2s ease-in-out;
+    text-transform: uppercase;
+}
+
+.xop-right {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(164, 222, 102, 0.10)), url(http://i.imgur.com/EHjNb0j.jpg);
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all .2s ease-in-out;
+    text-transform: uppercase;
+    filter: hue-rotate(90deg);
+}
+
+.xop-left:hover,
+.xop-right:hover {
+    transform: scale(0.95);
+}
+
+.xop-container h1 {
+    letter-spacing: 2px;
+    font-family: 'Francois One', sans-serif;
+    font-size: 3rem;
+}
+
+.xop-button {
+    border-radius: 2px;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 6px;
+    margin: 0 1%;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    width: 150px;
+}
+
+.xop-button:hover {
+    background: #fff;
+    color: #333;
+}
+
+@media only screen and (max-width: 600px) {
+    .xop-container {
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,25 @@
+# Docker Compose Production Environments 
+version : '3.5'
+services:
+        live-web:
+                image: open-vote-live-web
+                #entrypoint: flask run --host=0.0.0.0 --port=5001
+                entrypoint: make run
+                environment:
+                - API_URL=$API_URL
+                - USERNAME=$USERNAME
+                - PASSWORD=$PASSWORD
+                - ENVIRONMENT=$ENVIRONMENT
+                - HOST=$HOST
+                - SENTRY_DSN=$SENTRY_DSN
+                ports:
+                - 5001:5001
+                restart: always
+                networks:
+                        default:
+                                ipv4_address: 172.16.238.12
+
+networks:
+  default:
+    external:
+      name : open-vote-api_app_net

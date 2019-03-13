@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+
+<body>
+    <!-- https://xopixel.com/responsive-split-screen-layout-css3/ -->
+    <section class="xop-container">
+        {% for candidate in candidates %}
+        <div class="xop-left">
+            <article>
+                <img src="{{ url_for('static', filename='images/default.png') }}" alt="Avatar" style="border-radius: 50%;width: 25%">
+            </article>
+            <article>
+                <h1>{{ candidate.name }}</h1>
+                {% for user in candidate.users %}
+                    <p>{{user.name}}</p>
+                {% endfor %}
+                <a class="xop-button" id={{ candidate.id }}>{{ candidate.votes }}</a>
+            </article>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}" rel="stylesheet"></script>
+
+</html>
