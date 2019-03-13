@@ -7,8 +7,8 @@ services:
                 entrypoint: make run
                 environment:
                 - API_URL=$API_URL
-                - USERNAME=$USERNAME
-                - PASSWORD=$PASSWORD
+                - ADMIN_USERNAME=$ADMIN_USERNAME
+                - ADMIN_PASSWORD=$ADMIN_PASSWORD
                 - ENVIRONMENT=$ENVIRONMENT
                 - HOST=$HOST
                 - SENTRY_DSN=$SENTRY_DSN
@@ -17,7 +17,7 @@ services:
                 restart: always
                 networks:
                         default:
-                                ipv4_address: 172.16.238.12
+                                ipv4_address: 172.16.238.13
 
 networks:
   default:

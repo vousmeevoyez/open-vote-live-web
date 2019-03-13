@@ -7,8 +7,8 @@ from app.vote.modules.services import VoteServices
 @blueprint.route('/live')
 def index():
 	# fetch all necessary information to make request
-	username = environ.get("USERNAME")
-	password = environ.get("PASSWORD")
+	username = environ.get("ADMIN_USERNAME")
+	password = environ.get("ADMIN_PASSWORD")
 	election_id = request.args.get('election_id')
 
 	# fetch all candidates information from main back-end
