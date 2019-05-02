@@ -13,7 +13,7 @@ services:
                 - HOST=$HOST
                 - SENTRY_DSN=$SENTRY_DSN
                 ports:
-                - 5001:5001
+                - 5003:5003
                 restart: always
                 networks:
                         default:
