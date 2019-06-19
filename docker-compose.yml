@@ -1,8 +1,26 @@
-# Docker Compose Base
-version : '3.5'
+# Docker Compose Production Environments 
+version : '3'
 services:
         live-web:
                 build:
                         context: .
                         dockerfile: dockerfiles/flask/Dockerfile
                 image: open-vote-live-web
+                #entrypoint: flask run --host=0.0.0.0 --port=5001
+                entrypoint: make run
+                ports:
+                - 5002:5002
+                environment:
+                - API_URL=$API_URL
+                - ADMIN_USERNAME=$ADMIN_USERNAME
+                - ADMIN_PASSWORD=$ADMIN_PASSWORD
+                - ENVIRONMENT=$ENVIRONMENT
+                - HOST=$HOST
+                - SENTRY_DSN=$SENTRY_DSN
+                restart: always
+                networks:
+                - traefik-net
+
+networks:
+  traefik-net:
+    external: true
