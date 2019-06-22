@@ -20,6 +20,8 @@ services:
                 restart: always
                 networks:
                 - traefik-net
+                labels:
+                - "traefik.frontend.rule=Host:vote-count.vousmeevoyez.xyz"
 
 networks:
   traefik-net:
